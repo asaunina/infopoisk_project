@@ -4,3 +4,4 @@
 - Папка **static** -- style.css для оформления
 - **app.py** -- flask-код для запуска страниц
 
+zip-версия всей папки находится в https://disk.360.yandex.ru/d/3DO_GsILncMJ0g
