@@ -96,8 +96,12 @@ class InvertedIndexBM25:
             })
         # сохраняем в датафрейм
         top_n_scores_df = pd.DataFrame(results)
+
+        # время поиска
+        search_time = end_time - start_time
         
         # выводим сообщение и возвращаем датафрейм
-        print(f'Время поиска: {(end_time - start_time):.4f} секунд.')
+        print(f'Время поиска: {search_time:.4f} секунд.')
         print(f'Результаты поиска по запросу "{query}" (топ {top_n}):')
-        return top_n_scores_df
+        
+        return (search_time, top_n_scores_df)
