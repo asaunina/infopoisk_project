@@ -10,13 +10,13 @@ def parse_arguments():
                         description='Находит топ-n релевантных текстов по запросу в корпусе произведений Л.Н.Толстого',
                         epilog='''examples:
                                 # BM25
-                                python cli_search.py --query "война и мир" --method bm25 --top-n 10 --corpus corpus.json
+                                python cli.py --query "война и мир" --method bm25 --top-n 10 --corpus corpus.json
                                 
                                 # Word2Vec
-                                python cli_search.py --query "счастье" --method word2vec --top-n 5 --corpus corpus.json
+                                python cli.py --query "счастье" --method word2vec --top-n 5 --corpus corpus.json
                                 
                                 #FastText 
-                                python cli_search.py --query "Всё смешалось в доме Облонских!" --method fasttext --top-n 20 --corpus corpus.json'''
+                                python cli.py --query "Всё смешалось в доме Облонских!" --method fasttext --top-n 20 --corpus corpus.json'''
     )
 
     # добавление аргументов
