@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Выбор параметров поиска</title>
+    <link rel="stylesheet" href="./static/style.css">
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Поиск в корпусе</h1>
+              <form method="POST" action="\search">
+
+                <div class="form-group">
+                    <label for="query">Введите запрос:</label>
+                    <input type="text" id="query" name="query" required
+                           placeholder="Всё смешалось в доме Облонских!">
+                </div>
+
+                <div class="form-group">
+                    <label>Выберите метод поиска:</label>
+                    <div class="radio-group">
+                        <label>
+                            
+                            <input type="radio" name="search_type" value="bm25" required>
+                            BM25
+                        </label>
+                        <label>
+                            <input type="radio" name="search_type" value="word2vec">
+                            Word2Vec
+                        </label>
+                        <label>
+                            <input type="radio" name="search_type" value="fasttext">
+                            FastText
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="query">Введите число верхних по релевантности запросов, которые хотите увидеть:</label>
+                    <input type="int" id="top_n" name="top_n" required
+                           placeholder="5">
+                </div>
+
+                <button type="submit" class="button">Результаты поиска</button>
+                </div>
+                <br><br>
+                
+                <a href="/" class="button">На первую страницу</a>
+
+        
+    </body>
+
+</html>

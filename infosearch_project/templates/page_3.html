@@ -1,0 +1,53 @@
+<html>
+    <head><title>Результаты поиска </title>
+    <link rel="stylesheet" href="./static/style.css">
+    </head>
+
+<body>
+    <div class="container">
+        <h1>Результаты поиска</h1>
+        <p><strong>Запрос:</strong> {{ query }}</p>
+        <p><strong>Метод поиска:</strong> {{ search_type }}</p>
+        <p><strong>Топ-n результатов:</strong> {{ top_n }}</p>
+        <p><strong>Время поиска:</strong> {{ search_time }} секунд</p>
+
+        {% if results %}
+            <div class="results-table">
+                <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Score</th>
+                        <th>Название книги</th>
+                        <th>Название главы</th>
+                        <th>Текст</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for result in results %}
+                <tr>
+                        <td class="index-cell">{{ loop.index }}</td>
+                        <td  class="score-cell">{{ result.score}}</td>
+                        <td  class="title-cell">{{ result.book_title}}</td>
+                        <td  class="chapter-cell">{{ result.chapter_name}}</td>
+                        <td  class="text-cell">{{ result.sentence_text}}</td>
+                
+                    </div>
+                </tr>
+                {% endfor %}
+                </div>
+                </tbody>
+            </tavle>
+        {% else %}
+        <div class="no-results">
+            <p>В корпусе текстов Л.Н. Толстого отсутствуют тексты, соответствующие вашему запросу, попробуйте с новым.</p>
+            </div>
+        {% endif %}
+        </div>
+
+        <a href="/search" class="button">Новый поиск</a>
+        <a href="/" class="button">На первую страницу</a>
+    </div>
+</body>
+
+</html>
